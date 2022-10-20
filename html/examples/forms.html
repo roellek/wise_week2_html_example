@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+
+  <body>
+    <h1>Order Macarons</h1>
+    <!-- submitting form will be directing the user to ./result.html -->
+    <form action="./result.html">
+        <!-- fieldset creates sections within the form element -->
+      <fieldset>
+        <legend>Profile</legend>
+        <h3><label for="fname">First Name</label></h3>
+        <input type="text" name="first name" id="fname" />
+        <h3><label for="lname">Last Name</label></h3>
+        <input type="text" name="first name" id="lname" />
+        <h3><label for="email">Email</label></h3>
+        <!-- email field will be auto focused everytime the page is reloaded. -->
+        <input type="email" name="email" id="email" autofocus />
+        <h3><label for="pwd">Password</label></h3>
+        <input type="password" name="password" id="pwd" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Order</legend>
+        <!-- it's a good practice to have a label for form elements. "for" attribute takes an id of the element it's representing. -->
+        <h3><label for="macaron-option">Select a flavour:</label></h3>
+        <select name="macaron-options" id="macaron-option">
+          <option value="chocolate">Chocolate</option>
+          <option value="salted caramel">Salted Caramel</option>
+          <option value="earl grey">Earl Grey</option>
+          <option value="strawberry">Strawberry</option>
+          <option value="lavender and honey">Lavender and Honey</option>
+        </select>
+        <h3>Add-ons</h3>
+        <input type="checkbox" id="gift-msg" name="gift-msg" value="gift message" checked/>
+        <label for="gift-msg">gift message</label>
+        <input type="checkbox" id="gift-box" name="gift-box" value="false" />
+        <label for="gift-box">gift box</label>
+      </fieldset>
+
+      <h3><label for="macaron-note">Note:</label></h3>
+      <!-- rows and cols attributes determine the size of the textarea. -->
+      <textarea id="macaron-note" rows="4" cols="20"> leave a note here.</textarea>
+
+      <!-- radio button needs to have the sama name attribute to be considered as the same group. -->
+      <h3>How did we do today?</h3>
+      <input
+        type="radio"
+        id="satisfaction-bad"
+        name="satisfaction"
+        value="bad"
+      />
+      <label for="satisfaction-bad">🙁</label>
+      <input
+        type="radio"
+        id="satisfaction-neutral"
+        name="satisfaction"
+        value="neutral"
+      />
+      <label for="satisfaction-neutral"> 😐 </label>
+      <input type="radio" name="satisfaction" value="good" />
+      <label form="satisfaction-good">😁</label> <br />
+      <!-- range can be used with min/max attribute -->
+      <input type="range" name="satisfaction-range" min="1" max="5" disabled/>
+      <br />
+      <br />
+
+      <!-- type submit will create button that submits everything under the form on click -->
+      <input type="submit" value="Order" />
+    </form>
+  </body>
+</html>
